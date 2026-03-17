@@ -61,7 +61,8 @@ export const portfolioData = {
   // Scrolling speed for the skills section (duration in seconds)
   skillsScrollSpeed: 50,
 
-
+  // Default color mode (true for Dark Mode, false for Light Mode)
+  defaultDarkMode: true,
   // Contact Section
   contactSubtitle: "Open to Backend & ML roles",
   githubLink: "https://github.com/Maniprogramer",

@@ -5,7 +5,7 @@ import { Github, Mail, Linkedin, ArrowRight, Sun, Moon } from "lucide-react";
 import { useState, useRef } from "react";
 import { portfolioData } from "./data/portfolio";
 export default function Portfolio() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(portfolioData.defaultDarkMode ?? false);
   const [result, setResult] = useState(null);
   const ref = useRef(null);
 
