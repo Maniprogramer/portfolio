@@ -2,7 +2,7 @@
 
 export const portfolioData = {
   // General Info
-  name: "Manikanta Yarramneedi",
+  name: "Manikanta",
 
   // Hero Section
   heroTitle: "Manikanta Yarramneedi",
