@@ -112,8 +112,9 @@ export default function Portfolio() {
       </section>
 
       {/* SKILLS FLOW */}
-      <section className="py-10 overflow-hidden select-none">
+      <section className="py-10 overflow-hidden select-none relative">
         <div className="flex w-full relative">
+          {/* Base Layer: Dim text */}
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
             transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
@@ -121,10 +122,32 @@ export default function Portfolio() {
           >
             {[...portfolioData.skills, ...portfolioData.skills, ...portfolioData.skills, ...portfolioData.skills].map((skill, i) => (
               <span key={i} className="mx-8 hover:text-blue-500 transition-colors duration-300">
-                {skill} <span className="mx-8">&bull;</span>
+                {skill} <span className="mx-8 text-gray-500">&bull;</span>
               </span>
             ))}
           </motion.div>
+
+          {/* Glowing Overlay Layer (Visible only in the center of the screen) */}
+          <div 
+            className="absolute inset-0 pointer-events-none flex"
+            style={{ 
+              maskImage: "linear-gradient(to right, transparent 0%, transparent 35%, black 50%, transparent 65%, transparent 100%)", 
+              WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 35%, black 50%, transparent 65%, transparent 100%)" 
+            }}
+          >
+            <motion.div
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+              className="whitespace-nowrap text-4xl md:text-6xl font-black flex items-center text-blue-500"
+              style={{ textShadow: "0px 0px 20px rgba(59,130,246,0.8)" }}
+            >
+              {[...portfolioData.skills, ...portfolioData.skills, ...portfolioData.skills, ...portfolioData.skills].map((skill, i) => (
+                <span key={i + "overlay"} className="mx-8">
+                  {skill} <span className="mx-8 text-blue-500/50">&bull;</span>
+                </span>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </section>
 
