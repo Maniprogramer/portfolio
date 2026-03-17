@@ -62,7 +62,7 @@ export default function Portfolio() {
       </section>
 
       {/* PROJECT STORY (FAANG STYLE) */}
-      <section id="projects" className="py-40 px-6 bg-gradient-to-b from-transparent to-gray-100">
+      <section id="projects" className="py-40 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-semibold mb-20">Selected Work</h2>
 
@@ -70,7 +70,7 @@ export default function Portfolio() {
             <motion.div key={i} className="mb-20 grid md:grid-cols-2 gap-10 items-center" whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 60 }}>
               <div>
                 <h3 className="text-3xl font-semibold">{p.title}</h3>
-                <p className="mt-4 text-gray-500">
+                <p className={`mt-4 ${dark ? "text-gray-400" : "text-gray-500"}`}>
                   {p.description}
                 </p>
                 <a href={p.link} target="_blank" rel="noopener noreferrer">
@@ -78,7 +78,7 @@ export default function Portfolio() {
                 </a>
               </div>
 
-              <div className="h-64 rounded-3xl bg-gradient-to-br from-gray-200 to-gray-300 shadow-inner" />
+              <div className={`h-64 rounded-3xl bg-gradient-to-br shadow-inner ${dark ? "from-gray-800 to-gray-900 border border-gray-800" : "from-gray-200 to-gray-300"}`} />
             </motion.div>
           ))}
         </div>
