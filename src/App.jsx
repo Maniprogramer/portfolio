@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Github, Mail, Linkedin, ArrowRight, Sun, Moon } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { portfolioData } from "./data/portfolio";
 export default function Portfolio() {
   const [dark, setDark] = useState(portfolioData.defaultDarkMode ?? false);
@@ -17,6 +17,15 @@ export default function Portfolio() {
     const responses = ["Low Risk", "Moderate", "High Risk"];
     setResult(responses[Math.floor(Math.random() * responses.length)]);
   };
+
+  // Sync document body background color with dark mode
+  useEffect(() => {
+    if (dark) {
+      document.body.style.backgroundColor = "black";
+    } else {
+      document.body.style.backgroundColor = "white";
+    }
+  }, [dark]);
 
   return (
     <div className={`w-full min-h-screen ${dark ? "bg-black text-white" : "bg-white text-black"} transition-all duration-700 font-sans`}>
