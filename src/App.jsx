@@ -47,14 +47,14 @@ export default function Portfolio() {
         </motion.p>
 
         <div className="mt-10 flex gap-4">
-          <a href="#projects"><Button>View Work <ArrowRight className="ml-2"/></Button></a>
+          <a href="#projects"><Button>View Work <ArrowRight className="ml-2" /></Button></a>
         </div>
       </section>
 
       {/* IMPACT SECTION (FAANG STYLE) */}
       <section className="py-32 px-6 max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center">
-        {portfolioData.impactItems.map((item,i)=>(
-          <motion.div key={i} whileInView={{opacity:1,y:0}} initial={{opacity:0,y:40}}>
+        {portfolioData.impactItems.map((item, i) => (
+          <motion.div key={i} whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 40 }}>
             <h3 className="text-2xl font-semibold">{item.title}</h3>
             <p className="mt-4 text-gray-500 text-sm">{item.description}</p>
           </motion.div>
@@ -66,8 +66,8 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-semibold mb-20">Selected Work</h2>
 
-          {portfolioData.projects.map((p,i)=>(
-            <motion.div key={i} className="mb-20 grid md:grid-cols-2 gap-10 items-center" whileInView={{opacity:1,y:0}} initial={{opacity:0,y:60}}>
+          {portfolioData.projects.map((p, i) => (
+            <motion.div key={i} className="mb-20 grid md:grid-cols-2 gap-10 items-center" whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 60 }}>
               <div>
                 <h3 className="text-3xl font-semibold">{p.title}</h3>
                 <p className="mt-4 text-gray-500">
@@ -92,7 +92,7 @@ export default function Portfolio() {
         <div className="mt-12 flex flex-col items-center gap-6">
           <Button onClick={handleFakeAPI}>Run Prediction</Button>
           {result && (
-            <motion.div initial={{scale:0.8,opacity:0}} animate={{scale:1,opacity:1}} className="text-2xl">
+            <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="text-2xl">
               {result}
             </motion.div>
           )}
@@ -103,8 +103,8 @@ export default function Portfolio() {
       <section id="skills" className="py-32 px-6 max-w-5xl mx-auto">
         <h2 className="text-4xl font-semibold mb-10">Core Stack</h2>
         <div className="flex flex-wrap gap-4">
-          {portfolioData.skills.map((s,i)=>(
-            <motion.span key={i} whileHover={{scale:1.15}} className="px-6 py-3 bg-gray-200/20 backdrop-blur rounded-full">
+          {portfolioData.skills.map((s, i) => (
+            <motion.span key={i} whileHover={{ scale: 1.15 }} className="px-6 py-3 bg-gray-200/20 backdrop-blur rounded-full">
               {s}
             </motion.span>
           ))}
@@ -117,9 +117,9 @@ export default function Portfolio() {
         <p className="mt-6 text-gray-400">{portfolioData.contactSubtitle}</p>
 
         <div className="mt-10 flex justify-center gap-8">
-          <a href={portfolioData.githubLink}><Github size={30}/></a>
-          <a href={portfolioData.linkedinLink}><Linkedin size={30}/></a>
-          <a href={portfolioData.emailLink}><Mail size={30}/></a>
+          <a href={portfolioData.githubLink}><Github size={30} /></a>
+          <a href={portfolioData.linkedinLink}><Linkedin size={30} /></a>
+          <a href={portfolioData.emailLink}><Mail size={30} /></a>
         </div>
       </section>
 
