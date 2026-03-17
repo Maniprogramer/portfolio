@@ -111,6 +111,23 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* SKILLS FLOW */}
+      <section className="py-10 overflow-hidden select-none">
+        <div className="flex w-full relative">
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+            className={`whitespace-nowrap text-4xl md:text-6xl font-black flex items-center ${dark ? "text-gray-800" : "text-gray-200"}`}
+          >
+            {[...portfolioData.skills, ...portfolioData.skills, ...portfolioData.skills, ...portfolioData.skills].map((skill, i) => (
+              <span key={i} className="mx-8 hover:text-blue-500 transition-colors duration-300">
+                {skill} <span className="mx-8">&bull;</span>
+              </span>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="py-40 bg-black text-white text-center px-6">
         <h2 className="text-5xl font-semibold">Let’s Build the Future</h2>
