@@ -115,33 +115,35 @@ export default function Portfolio() {
       <section className="py-10 overflow-hidden select-none relative flex items-center">
         {/* Base Layer: Dim text */}
         <motion.div
+          key={`base-${portfolioData.skillsScrollSpeed}`}
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+          transition={{ repeat: Infinity, duration: portfolioData.skillsScrollSpeed || 40, ease: "linear" }}
           className={`whitespace-nowrap text-4xl md:text-6xl font-black flex items-center w-max ${dark ? "text-gray-800" : "text-gray-200"}`}
         >
           {[...portfolioData.skills, ...portfolioData.skills, ...portfolioData.skills, ...portfolioData.skills].map((skill, i) => (
-            <span key={i} className="mx-8 hover:text-blue-500 transition-colors duration-300">
+            <span key={`${skill}-${i}`} className="mx-8 hover:text-blue-500 transition-colors duration-300">
               {skill} <span className="mx-8 text-gray-500">&bull;</span>
             </span>
           ))}
         </motion.div>
 
         {/* Glowing Overlay Layer (Visible only in the center of the screen) */}
-        <div 
+        <div
           className="absolute inset-0 pointer-events-none flex items-center overflow-hidden"
-          style={{ 
-            maskImage: "linear-gradient(to right, transparent 0%, transparent 35%, black 45%, black 55%, transparent 65%, transparent 100%)", 
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 35%, black 45%, black 55%, transparent 65%, transparent 100%)" 
+          style={{
+            maskImage: "linear-gradient(to right, transparent 0%, transparent 35%, black 45%, black 55%, transparent 65%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 35%, black 45%, black 55%, transparent 65%, transparent 100%)"
           }}
         >
           <motion.div
+            key={`overlay-${portfolioData.skillsScrollSpeed}`}
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+            transition={{ repeat: Infinity, duration: portfolioData.skillsScrollSpeed || 40, ease: "linear" }}
             className="whitespace-nowrap text-4xl md:text-6xl font-black flex items-center w-max text-blue-500"
             style={{ textShadow: "0px 0px 20px rgba(59,130,246,0.8)" }}
           >
             {[...portfolioData.skills, ...portfolioData.skills, ...portfolioData.skills, ...portfolioData.skills].map((skill, i) => (
-              <span key={i + "overlay"} className="mx-8">
+              <span key={`overlay-${skill}-${i}`} className="mx-8">
                 {skill} <span className="mx-8 text-blue-500/50">&bull;</span>
               </span>
             ))}

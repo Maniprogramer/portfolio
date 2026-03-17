@@ -58,6 +58,10 @@ export const portfolioData = {
     "PyTorch"
   ],
 
+  // Scrolling speed for the skills section (duration in seconds)
+  skillsScrollSpeed: 50,
+
+
   // Contact Section
   contactSubtitle: "Open to Backend & ML roles",
   githubLink: "https://github.com/Maniprogramer",
