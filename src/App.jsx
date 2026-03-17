@@ -21,14 +21,16 @@ export default function Portfolio() {
   return (
     <div className={`w-full min-h-screen ${dark ? "bg-black text-white" : "bg-white text-black"} transition-all duration-700 font-sans`}>
 
-      <div className="fixed top-0 w-full flex justify-between items-center px-10 py-5 backdrop-blur-2xl z-50">
-        <h1 className="font-semibold text-lg">{portfolioData.name}</h1>
-        <div className="flex gap-8 text-sm items-center">
-          <a href="#projects" className="hover:text-gray-400">Projects</a>
-          <a href="#skills" className="hover:text-gray-400">Skills</a>
-          <a href="#contact" className="hover:text-gray-400">Contact</a>
-          <button onClick={() => setDark(!dark)} className="p-2 ml-4 rounded-full backdrop-blur-md bg-white/10 hover:bg-white/20 border transition-all">
-            {dark ? <Sun size={18} /> : <Moon size={18} />}
+      <div className="fixed top-0 left-0 right-0 w-full flex justify-between items-center px-4 md:px-10 py-4 md:py-5 backdrop-blur-2xl z-50 overflow-hidden box-border">
+        <div className="flex-1 min-w-0 pr-2 sm:pr-4">
+          <h1 className="font-semibold text-sm md:text-lg truncate w-full">{portfolioData.name}</h1>
+        </div>
+        <div className="flex items-center justify-end gap-2 sm:gap-6 md:gap-8 text-[11px] sm:text-xs md:text-sm shrink-0 whitespace-nowrap">
+          <a href="#projects" className="hover:text-gray-400 transition-colors">Projects</a>
+          <a href="#skills" className="hover:text-gray-400 transition-colors">Skills</a>
+          <a href="#contact" className="hover:text-gray-400 transition-colors">Contact</a>
+          <button onClick={() => setDark(!dark)} className="p-2 shrink-0 rounded-full backdrop-blur-md bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 border border-gray-300/50 dark:border-gray-700/50 transition-all ml-1">
+            {dark ? <Sun size={14} className="sm:w-4 sm:h-4" /> : <Moon size={14} className="sm:w-4 sm:h-4" />}
           </button>
         </div>
       </div>
