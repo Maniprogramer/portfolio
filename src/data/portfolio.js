@@ -29,7 +29,7 @@ export const portfolioData = {
     {
       title: "Secure Auth API",
       description: "Designed and built a scalable backend system with real-world architecture patterns.",
-      link: "https://github.com/Maniprogramer/auth-api" // Add actual project link or github link here
+      link: "https://e-commerce-7xbcqvwz5-maniprogramers-projects.vercel.app/" // Add actual project link or github link here
     },
     {
       title: "Job Scraper",
