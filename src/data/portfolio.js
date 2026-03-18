@@ -27,15 +27,15 @@ export const portfolioData = {
   // Selected Work / Projects
   projects: [
     {
-      title: "E-Commerce API",
-      description: "Designed and built a scalable backend system with real-world architecture patterns.",
-      link: "https://e-commerce-7xbcqvwz5-maniprogramers-projects.vercel.app/", // Add actual project link or github link here
-      image: "/ecommerce-api.png"
-    },
-    {
       title: "Job Scraper",
       description: "Automated data extraction tool to intelligently parse and aggregate job postings.",
       link: "https://github.com/Maniprogramer/JOB-SCRAPER"
+    },
+    {
+      title: "E-Commerce API",
+      description: "Designed and built a scalable backend system with real-world architecture patterns.",
+      link: "https://e-commerce-api-three-henna.vercel.app/", // Add actual project link or github link here
+      image: "/ecommerce-api.png"
     },
     {
       title: "Feedback System",
