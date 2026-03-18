@@ -89,7 +89,11 @@ export default function Portfolio() {
                 </a>
               </div>
 
-              <div className={`h-64 rounded-3xl bg-gradient-to-br shadow-inner ${dark ? "from-gray-800 to-gray-900 border border-gray-800" : "from-gray-200 to-gray-300"}`} />
+              <div className={`h-64 rounded-3xl bg-gradient-to-br shadow-inner relative overflow-hidden ${dark ? "from-gray-800 to-gray-900 border border-gray-800" : "from-gray-200 to-gray-300"}`}>
+                {p.image && (
+                  <img src={p.image} alt={p.title} className="w-full h-full object-cover absolute top-0 left-0" />
+                )}
+              </div>
             </motion.div>
           ))}
         </div>

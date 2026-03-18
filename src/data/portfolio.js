@@ -27,9 +27,10 @@ export const portfolioData = {
   // Selected Work / Projects
   projects: [
     {
-      title: "Secure Auth API",
+      title: "E-Commerce API",
       description: "Designed and built a scalable backend system with real-world architecture patterns.",
-      link: "https://e-commerce-7xbcqvwz5-maniprogramers-projects.vercel.app/" // Add actual project link or github link here
+      link: "https://e-commerce-7xbcqvwz5-maniprogramers-projects.vercel.app/", // Add actual project link or github link here
+      image: "/ecommerce-api.png"
     },
     {
       title: "Job Scraper",
