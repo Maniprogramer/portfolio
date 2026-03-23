@@ -56,7 +56,8 @@ export const portfolioData = {
     "Pandas",
     "Scikit-learn",
     "Matplotlib",
-    "PyTorch"
+    "PyTorch",
+    "Docker"
   ],
 
   // Scrolling speed for the skills section (duration in seconds)
