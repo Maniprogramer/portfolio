@@ -30,7 +30,7 @@ export const portfolioData = {
       title: "Auth API",
       description: "Authentication and Authorization API for secure user management.",
       link: "https://github.com/Maniprogramer/auth-api",
-      image: "/auth-api.png"
+      image: "/authapi.png"
     },
     {
       title: "E-Commerce API",
