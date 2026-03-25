@@ -27,9 +27,10 @@ export const portfolioData = {
   // Selected Work / Projects
   projects: [
     {
-      title: "Job Scraper",
-      description: "Automated data extraction tool to intelligently parse and aggregate job postings.",
-      link: "https://github.com/Maniprogramer/JOB-SCRAPER"
+      title: "Auth API",
+      description: "Authentication and Authorization API for secure user management.",
+      link: "https://github.com/Maniprogramer/auth-api",
+      image: "/auth-api.png"
     },
     {
       title: "E-Commerce API",
