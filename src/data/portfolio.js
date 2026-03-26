@@ -32,7 +32,7 @@ export const portfolioData = {
       title: "E-commerce Backend System",
       description:
         "Built a production-style backend handling products, cart, and orders; implemented secure JWT authentication; designed scalable database schema using PostgreSQL; added pagination and filtering for performance.",
-      link: "https://e-commerce-api-three-henna.vercel.app/",
+      link: "https://ecommerce-api-manikanta.vercel.app/",
       image: "/ecommerce-api.png",
       whyItMatters:
         "Demonstrates ability to design scalable backend systems and handle real-world e-commerce workflows."
@@ -61,7 +61,7 @@ export const portfolioData = {
   apiDemo: {
     title: "Try My API",
     description: "Explore the live backend API using Swagger UI. Test real endpoints for authentication, products, and orders — all running on production.",
-    link: "https://e-commerce-api-three-henna.vercel.app/docs",
+    link: "https://ecommerce-api-manikanta.vercel.app/docs",
     endpoints: [
       { method: "POST", path: "/auth/login", label: "User Login" },
       { method: "GET", path: "/products", label: "List Products" },
