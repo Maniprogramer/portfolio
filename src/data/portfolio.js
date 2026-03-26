@@ -6,7 +6,7 @@ export const portfolioData = {
 
   // Hero Section
   heroTitle: "Manikanta Yarramneedi",
-  heroSubtitle: "Building scalable backend systems and intelligent ML-powered products",
+  heroSubtitle: "Backend Developer specializing in FastAPI & PostgreSQL. I build scalable backend systems with authentication, APIs, and real-world workflows. 👉 Built production-style E-commerce API with JWT auth, orders, and payments. 👉 Focused on clean architecture & performance",
 
   // Impact Section (3 items)
   impactItems: [
