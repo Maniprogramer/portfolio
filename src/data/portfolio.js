@@ -35,7 +35,7 @@ export const portfolioData = {
     {
       title: "E-Commerce API",
       description: "Designed and built a scalable backend system with real-world architecture patterns.",
-      link: "https://e-commerce-api-three-henna.vercel.app/", // Add actual project link or github link here
+      link: "https://ecommerce-api-manikanta.vercel.app/", // Add actual project link or github link here
       image: "/ecommerce-api.png"
     },
     {
