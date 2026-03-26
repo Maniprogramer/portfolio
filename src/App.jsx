@@ -84,6 +84,14 @@ export default function Portfolio() {
                 <p className={`mt-4 ${dark ? "text-gray-400" : "text-gray-500"}`}>
                   {p.description}
                 </p>
+                {p.whyItMatters && (
+                  <div className="mt-4 text-sm">
+                    <p className={`font-semibold ${dark ? "text-gray-300" : "text-gray-700"}`}>Why this project matters:</p>
+                    <p className={`mt-1 ${dark ? "text-gray-400" : "text-gray-500"}`}>
+                      {p.whyItMatters}
+                    </p>
+                  </div>
+                )}
                 <a href={p.link} target="_blank" rel="noopener noreferrer">
                   <Button className="mt-6">Explore Project</Button>
                 </a>

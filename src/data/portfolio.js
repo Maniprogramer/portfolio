@@ -6,7 +6,7 @@ export const portfolioData = {
 
   // Hero Section
   heroTitle: "Manikanta Yarramneedi",
-  heroSubtitle: "Backend Developer specializing in FastAPI & PostgreSQL. I build scalable backend systems with authentication, APIs, and real-world workflows. 👉 Built production-style E-commerce API with JWT auth, orders, and payments. 👉 Focused on clean architecture & performance",
+  heroSubtitle: "I’m a backend-focused developer passionate about building scalable APIs and backend systems. Currently looking for Backend Developer roles in Hyderabad. ",
 
   // Impact Section (3 items)
   impactItems: [
@@ -30,18 +30,21 @@ export const portfolioData = {
       title: "Auth API",
       description: "Authentication and Authorization API for secure user management.",
       link: "https://github.com/Maniprogramer/auth-api",
-      image: "/authapi.png"
+      image: "/authapi.png",
+      whyItMatters: "Demonstrates ability to design scalable backend systems and handle real-world e-commerce workflows."
     },
     {
       title: "E-Commerce API",
       description: "Designed and built a scalable backend system with real-world architecture patterns.",
       link: "https://ecommerce-api-manikanta.vercel.app/", // Add actual project link or github link here
-      image: "/ecommerce-api.png"
+      image: "/ecommerce-api.png",
+      whyItMatters: "Demonstrates ability to design scalable backend systems and handle real-world e-commerce workflows."
     },
     {
       title: "Feedback System",
       description: "A comprehensive feedback collection and analysis pipeline for user insights.",
-      link: "#"
+      link: "#",
+      whyItMatters: "Demonstrates ability to design scalable backend systems and handle real-world e-commerce workflows."
     }
   ],
 
