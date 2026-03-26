@@ -1,50 +1,59 @@
-// Edit this file to update the content in your portfolio!
-
 export const portfolioData = {
   // General Info
-  name: "Manikanta",
+  name: "Hi, I’m Manikanta 👋",
 
   // Hero Section
   heroTitle: "Manikanta Yarramneedi",
-  heroSubtitle: "I’m a backend-focused developer passionate about building scalable APIs and backend systems. Currently looking for Backend Developer roles in Hyderabad. ",
+  heroSubtitle:
+    "Backend Developer specializing in Python, FastAPI, and PostgreSQL. I build scalable APIs with secure authentication and real-world workflows. Currently looking for Backend Developer roles in Hyderabad.",
 
   // Impact Section (3 items)
   impactItems: [
     {
-      title: "High Performance APIs",
-      description: "Built with production-grade architecture and scalability in mind."
+      title: "Scalable Backend Systems",
+      description:
+        "Designed modular APIs with clean architecture and service-layer patterns."
     },
     {
-      title: "Secure Systems",
-      description: "Implemented robust authentication and data protection layers."
+      title: "Secure Authentication",
+      description:
+        "Implemented JWT-based authentication and protected API endpoints."
     },
     {
-      title: "ML Integration",
-      description: "Seamlessly connected intelligent models with backend services."
+      title: "Production-Ready APIs",
+      description:
+        "Built real-world workflows including products, cart, and order systems."
     }
   ],
 
   // Selected Work / Projects
   projects: [
     {
-      title: "Auth API",
-      description: "Authentication and Authorization API for secure user management.",
+      title: "E-commerce Backend System",
+      description:
+        "Built a production-style backend handling products, cart, and orders; implemented secure JWT authentication; designed scalable database schema using PostgreSQL; added pagination and filtering for performance.",
+      link: "https://e-commerce-api-three-henna.vercel.app/",
+      image: "/ecommerce-api.png",
+      whyItMatters:
+        "Demonstrates ability to design scalable backend systems and handle real-world e-commerce workflows."
+    },
+    {
+      title: "Authentication & Authorization API",
+      description:
+        "Developed a secure authentication system using JWT and OAuth2; implemented user signup, login, and protected routes; ensured password security using bcrypt hashing.",
       link: "https://github.com/Maniprogramer/auth-api",
       image: "/authapi.png",
-      whyItMatters: "Demonstrates ability to design scalable backend systems and handle real-world e-commerce workflows."
+      whyItMatters:
+        "Shows ability to implement secure authentication systems used in real-world backend applications."
     },
     {
-      title: "E-Commerce API",
-      description: "Designed and built a scalable backend system with real-world architecture patterns.",
-      link: "https://ecommerce-api-manikanta.vercel.app/", // Add actual project link or github link here
-      image: "/ecommerce-api.png",
-      whyItMatters: "Demonstrates ability to design scalable backend systems and handle real-world e-commerce workflows."
-    },
-    {
-      title: "Feedback System",
-      description: "A comprehensive feedback collection and analysis pipeline for user insights.",
+      title: "Feedback Collection System",
+      description:
+        "Designed a backend system for collecting and processing user feedback data with structured storage and analysis workflows.",
       link: "#",
-      whyItMatters: "Demonstrates ability to design scalable backend systems and handle real-world e-commerce workflows."
+      image: "/feedback.png",
+      whyItMatters:
+        "Demonstrates ability to design data-driven backend systems and handle structured data workflows."
     }
   ],
 
@@ -55,13 +64,13 @@ export const portfolioData = {
     "REST APIs",
     "PostgreSQL",
     "SQLAlchemy",
-    "Machine Learning",
-    "NumPy",
+    "JWT Authentication",
+    "Docker",
+    "Git",
+    "Postman",
     "Pandas",
-    "Scikit-learn",
-    "Matplotlib",
-    "PyTorch",
-    "Docker"
+    "NumPy",
+    "Scikit-learn"
   ],
 
   // Scrolling speed for the skills section (duration in seconds)
@@ -69,8 +78,9 @@ export const portfolioData = {
 
   // Default color mode (true for Dark Mode, false for Light Mode)
   defaultDarkMode: true,
+
   // Contact Section
-  contactSubtitle: "Open to Backend & ML roles",
+  contactSubtitle: "Open to Backend Developer roles in Hyderabad",
   githubLink: "https://github.com/Maniprogramer",
   linkedinLink: "https://www.linkedin.com/in/manikanta-yarramneedi-487b413b6/",
   emailLink: "mailto:manikanta.yarramneedi.home@gmail.com"
