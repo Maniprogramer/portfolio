@@ -57,6 +57,19 @@ export const portfolioData = {
     }
   ],
 
+  // API Demo Section
+  apiDemo: {
+    title: "Try My API",
+    description: "Explore the live backend API using Swagger UI. Test real endpoints for authentication, products, and orders — all running on production.",
+    link: "https://e-commerce-api-three-henna.vercel.app/docs",
+    endpoints: [
+      { method: "POST", path: "/auth/login", label: "User Login" },
+      { method: "GET", path: "/products", label: "List Products" },
+      { method: "POST", path: "/cart", label: "Add to Cart" },
+      { method: "GET", path: "/orders", label: "View Orders" }
+    ]
+  },
+
   // Skills
   skills: [
     "Python",

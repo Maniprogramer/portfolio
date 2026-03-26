@@ -1,22 +1,19 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
-import { Github, Mail, Linkedin, ArrowRight, Sun, Moon } from "lucide-react";
+import { Github, Mail, Linkedin, ArrowRight, Sun, Moon, ExternalLink, Terminal } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { portfolioData } from "./data/portfolio";
 export default function Portfolio() {
   const [dark, setDark] = useState(portfolioData.defaultDarkMode ?? false);
-  const [result, setResult] = useState(null);
+
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useTransform(scrollYProgress, [0, 1], [0, -400]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
 
-  const handleFakeAPI = () => {
-    const responses = ["Low Risk", "Moderate", "High Risk"];
-    setResult(responses[Math.floor(Math.random() * responses.length)]);
-  };
+
 
   // Sync document body background color with dark mode
   useEffect(() => {
@@ -107,20 +104,80 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ML DEMO (REAL FEEL) */}
-      <section className="py-40 px-6 text-center">
-        <h2 className="text-5xl font-semibold">Live ML System</h2>
-        <p className="mt-4 text-gray-500">Simulating real-time prediction API</p>
-
-        <div className="mt-12 flex flex-col items-center gap-6">
-          <Button onClick={handleFakeAPI}>Run Prediction</Button>
-          {result && (
-            <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="text-2xl">
-              {result}
+      {/* API DEMO SECTION */}
+      {portfolioData.apiDemo && (
+        <section className="py-40 px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              className="text-center mb-16"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 text-green-400 text-sm font-medium mb-6">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                Live API
+              </div>
+              <h2 className="text-5xl font-semibold">{portfolioData.apiDemo.title}</h2>
+              <p className="mt-4 text-gray-500 max-w-2xl mx-auto">{portfolioData.apiDemo.description}</p>
             </motion.div>
-          )}
-        </div>
-      </section>
+
+            <motion.div
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              className={`rounded-2xl border overflow-hidden ${dark ? "bg-gray-900/50 border-gray-800" : "bg-gray-50 border-gray-200"}`}
+            >
+              {/* Terminal-style header */}
+              <div className={`flex items-center gap-3 px-5 py-3 border-b ${dark ? "border-gray-800 bg-gray-900" : "border-gray-200 bg-gray-100"}`}>
+                <div className="flex gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-red-500/80" />
+                  <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                  <span className="w-3 h-3 rounded-full bg-green-500/80" />
+                </div>
+                <div className="flex items-center gap-2 text-xs text-gray-500">
+                  <Terminal size={12} />
+                  <span>API Endpoints</span>
+                </div>
+              </div>
+
+              {/* Endpoint list */}
+              <div className="p-4 space-y-3">
+                {portfolioData.apiDemo.endpoints.map((ep, i) => (
+                  <motion.div
+                    key={i}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    transition={{ delay: i * 0.1 }}
+                    className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-colors ${dark ? "hover:bg-gray-800/60" : "hover:bg-gray-100"}`}
+                  >
+                    <span className={`px-2.5 py-1 rounded-md text-xs font-bold font-mono tracking-wide ${
+                      ep.method === "GET"
+                        ? "bg-blue-500/15 text-blue-400"
+                        : ep.method === "POST"
+                        ? "bg-green-500/15 text-green-400"
+                        : ep.method === "PUT"
+                        ? "bg-yellow-500/15 text-yellow-400"
+                        : "bg-red-500/15 text-red-400"
+                    }`}>
+                      {ep.method}
+                    </span>
+                    <code className={`text-sm font-mono ${dark ? "text-gray-300" : "text-gray-700"}`}>{ep.path}</code>
+                    <span className="text-xs text-gray-500 ml-auto hidden sm:block">{ep.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* CTA Button */}
+            <div className="text-center mt-10">
+              <a href={portfolioData.apiDemo.link} target="_blank" rel="noopener noreferrer">
+                <Button className="gap-2">
+                  Open Swagger Docs <ExternalLink size={16} />
+                </Button>
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* SKILLS */}
       <section id="skills" className="py-32 px-6 max-w-5xl mx-auto">
