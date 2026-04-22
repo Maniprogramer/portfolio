@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
-import { Github, Mail, Linkedin, ArrowRight, Sun, Moon, ExternalLink, Terminal } from "lucide-react";
+import { Github, Mail, Linkedin, ArrowRight, Sun, Moon, ExternalLink, Terminal, FileText, Briefcase, GraduationCap, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { portfolioData } from "./data/portfolio";
 export default function Portfolio() {
@@ -12,8 +12,6 @@ export default function Portfolio() {
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useTransform(scrollYProgress, [0, 1], [0, -400]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
-
-
 
   // Sync document body background color with dark mode
   useEffect(() => {
@@ -32,6 +30,7 @@ export default function Portfolio() {
           <h1 className="font-semibold text-sm md:text-lg truncate w-full">{portfolioData.name}</h1>
         </div>
         <div className="flex items-center justify-end gap-2 sm:gap-6 md:gap-8 text-[11px] sm:text-xs md:text-sm shrink-0 whitespace-nowrap">
+          <a href="#experience" className="hover:text-gray-400 transition-colors hidden sm:block">Experience</a>
           <a href="#projects" className="hover:text-gray-400 transition-colors">Projects</a>
           <a href="#skills" className="hover:text-gray-400 transition-colors">Skills</a>
           <a href="#contact" className="hover:text-gray-400 transition-colors">Contact</a>
@@ -54,9 +53,16 @@ export default function Portfolio() {
           {portfolioData.heroSubtitle}
         </motion.p>
 
-        <div className="mt-10 flex gap-4">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="mt-10 flex flex-wrap justify-center gap-4">
           <a href="#projects"><Button>View Work <ArrowRight className="ml-2" /></Button></a>
-        </div>
+          {portfolioData.resumeLink && (
+            <a href={portfolioData.resumeLink} target="_blank" rel="noopener noreferrer">
+              <Button className="gap-2" variant="outline">
+                <FileText size={16} /> View Resume
+              </Button>
+            </a>
+          )}
+        </motion.div>
       </section>
 
       {/* IMPACT SECTION (FAANG STYLE) */}
@@ -68,6 +74,74 @@ export default function Portfolio() {
           </motion.div>
         ))}
       </section>
+
+      {/* EXPERIENCE SECTION */}
+      {portfolioData.experience && (
+        <section id="experience" className="py-32 px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.h2
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              className="text-5xl font-semibold mb-16"
+            >
+              Experience
+            </motion.h2>
+
+            <motion.div
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              className={`rounded-2xl border p-8 relative overflow-hidden ${dark ? "bg-gray-900/40 border-gray-800" : "bg-gray-50 border-gray-200"}`}
+            >
+              {/* Accent bar */}
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-l-2xl" />
+
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <Briefcase size={20} className="text-blue-400" />
+                    <h3 className="text-2xl font-semibold">{portfolioData.experience.role}</h3>
+                  </div>
+                  <p className={`text-lg ${dark ? "text-gray-300" : "text-gray-700"}`}>
+                    {portfolioData.experience.company}
+                  </p>
+                </div>
+                <div className="text-right shrink-0">
+                  <p className="text-sm text-blue-400 font-medium">{portfolioData.experience.period}</p>
+                  <p className="text-xs text-gray-500 mt-1">{portfolioData.experience.location}</p>
+                </div>
+              </div>
+
+              <div className="space-y-3 mt-6">
+                {portfolioData.experience.highlights.map((h, i) => (
+                  <motion.div
+                    key={i}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, x: -15 }}
+                    transition={{ delay: i * 0.08 }}
+                    className="flex items-start gap-3"
+                  >
+                    <ChevronRight size={16} className="text-blue-400 mt-0.5 shrink-0" />
+                    <p className={`text-sm ${dark ? "text-gray-400" : "text-gray-600"}`}>{h}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Education */}
+              {portfolioData.education && (
+                <div className={`mt-8 pt-6 border-t ${dark ? "border-gray-800" : "border-gray-200"}`}>
+                  <div className="flex items-center gap-3">
+                    <GraduationCap size={20} className="text-purple-400" />
+                    <div>
+                      <p className="font-semibold">{portfolioData.education.degree}</p>
+                      <p className="text-sm text-gray-500">{portfolioData.education.year}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* PROJECT STORY (FAANG STYLE) */}
       <section id="projects" className="py-40 px-6">
@@ -81,6 +155,21 @@ export default function Portfolio() {
                 <p className={`mt-4 ${dark ? "text-gray-400" : "text-gray-500"}`}>
                   {p.description}
                 </p>
+
+                {/* Tech Stack badges */}
+                {p.techStack && (
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {p.techStack.map((tech, j) => (
+                      <span
+                        key={j}
+                        className={`px-3 py-1 text-xs font-medium rounded-full ${dark ? "bg-blue-500/10 text-blue-400 border border-blue-500/20" : "bg-blue-50 text-blue-600 border border-blue-200"}`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
                 {p.whyItMatters && (
                   <div className="mt-4 text-sm">
                     <p className={`font-semibold ${dark ? "text-gray-300" : "text-gray-700"}`}>Why this project matters:</p>
@@ -233,14 +322,29 @@ export default function Portfolio() {
 
       {/* CONTACT */}
       <section id="contact" className="py-40 bg-black text-white text-center px-6">
-        <h2 className="text-5xl font-semibold">Let’s Build the Future</h2>
+        <h2 className="text-5xl font-semibold">Let's Build the Future</h2>
         <p className="mt-6 text-gray-400">{portfolioData.contactSubtitle}</p>
 
         <div className="mt-10 flex justify-center gap-8">
-          <a href={portfolioData.githubLink}><Github size={30} /></a>
-          <a href={portfolioData.linkedinLink}><Linkedin size={30} /></a>
-          <a href={portfolioData.emailLink}><Mail size={30} /></a>
+          <a href={portfolioData.githubLink} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors"><Github size={30} /></a>
+          <a href={portfolioData.linkedinLink} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors"><Linkedin size={30} /></a>
+          <a href={portfolioData.emailLink} className="hover:text-blue-400 transition-colors"><Mail size={30} /></a>
         </div>
+
+        {/* Resume CTA in Contact */}
+        {portfolioData.resumeLink && (
+          <motion.div
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            className="mt-12"
+          >
+            <a href={portfolioData.resumeLink} target="_blank" rel="noopener noreferrer">
+              <Button className="gap-2" variant="outline">
+                <FileText size={16} /> Download Resume
+              </Button>
+            </a>
+          </motion.div>
+        )}
       </section>
 
     </div>

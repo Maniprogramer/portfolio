@@ -1,67 +1,85 @@
 export const portfolioData = {
   // General Info
-  name: "Hi, I’m Manikanta 👋",
+  name: "Hi, I'm Manikanta 👋",
 
   // Hero Section
   heroTitle: "Manikanta Yarramneedi",
   heroSubtitle:
-    "Backend Developer specializing in Python, FastAPI, and PostgreSQL. I build scalable APIs with secure authentication and real-world workflows. Currently looking for Backend Developer roles in Hyderabad.",
+    "Backend Developer with hands-on experience building scalable REST APIs using Python, FastAPI, and PostgreSQL. Proven ability to design CRUD-based systems, optimize API performance by 25%, and implement secure authentication (JWT, OAuth2).",
+
+  // Resume — place your resume PDF at /public/resume.pdf
+  resumeLink: "/resume.pdf",
+
+  // Professional Summary (for About / Experience section)
+  experience: {
+    role: "Backend Developer",
+    company: "UST Global",
+    period: "Mar 2024 – Present",
+    location: "Hyderabad, India",
+    highlights: [
+      "Developed REST APIs using Python and FastAPI",
+      "Implemented CRUD operations and API design principles",
+      "Built async APIs improving performance",
+      "Implemented JWT and OAuth2 authentication",
+      "Optimized PostgreSQL queries and indexing",
+      "Handled error validation and exception handling"
+    ]
+  },
+
+  education: {
+    degree: "B.Sc. in Artificial Intelligence and Robotics",
+    year: "2023"
+  },
 
   // Impact Section (3 items)
   impactItems: [
     {
-      title: "Scalable Backend Systems",
+      title: "25% Faster APIs",
       description:
-        "Designed modular APIs with clean architecture and service-layer patterns."
+        "Optimized API performance with pagination, filtering, and PostgreSQL query tuning."
     },
     {
       title: "Secure Authentication",
       description:
-        "Implemented JWT-based authentication and protected API endpoints."
+        "Implemented JWT and OAuth2 authentication with bcrypt password hashing."
     },
     {
-      title: "Production-Ready APIs",
+      title: "Production-Ready Systems",
       description:
-        "Built real-world workflows including products, cart, and order systems."
+        "Built async APIs with Docker deployment, error handling, and CI/CD concepts."
     }
   ],
 
   // Selected Work / Projects
   projects: [
     {
-      title: "E-commerce Backend System",
+      title: "Scalable E-commerce API",
       description:
-        "Built a production-style backend handling products, cart, and orders; implemented secure JWT authentication; designed scalable database schema using PostgreSQL; added pagination and filtering for performance.",
-      link: "https://ecommerce-api-manikanta.vercel.app/",
+        "Built CRUD-based APIs with filtering and pagination (25% faster). Implemented JWT authentication, Docker deployment, and comprehensive validation and error handling. Designed scalable database schema using PostgreSQL with SQLAlchemy ORM.",
+      techStack: ["FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "JWT"],
+      link: "https://e-commerce-api-three-henna.vercel.app/",
       image: "/ecommerce-api.png",
       whyItMatters:
         "Demonstrates ability to design scalable backend systems and handle real-world e-commerce workflows."
     },
     {
-      title: "Authentication & Authorization API",
+      title: "Secure Auth API",
       description:
-        "Developed a secure authentication system using JWT and OAuth2; implemented user signup, login, and protected routes; ensured password security using bcrypt hashing.",
+        "Built a secure authentication system using OAuth2 and JWT. Implemented password hashing with bcrypt, user signup/login flows, protected routes, and token refresh mechanisms.",
+      techStack: ["FastAPI", "OAuth2", "JWT", "Bcrypt", "PostgreSQL"],
       link: "https://github.com/Maniprogramer/auth-api",
       image: "/authapi.png",
       whyItMatters:
         "Shows ability to implement secure authentication systems used in real-world backend applications."
-    },
-    {
-      title: "Feedback Collection System",
-      description:
-        "Designed a backend system for collecting and processing user feedback data with structured storage and analysis workflows.",
-      link: "#",
-      image: "/feedback.png",
-      whyItMatters:
-        "Demonstrates ability to design data-driven backend systems and handle structured data workflows."
     }
   ],
 
   // API Demo Section
   apiDemo: {
     title: "Try My API",
-    description: "Explore the live backend API using Swagger UI. Test real endpoints for authentication, products, and orders — all running on production.",
-    link: "https://ecommerce-api-manikanta.vercel.app/docs",
+    description:
+      "Explore the live backend API using Swagger UI. Test real endpoints for authentication, products, and orders — all running on production.",
+    link: "https://e-commerce-api-three-henna.vercel.app/docs",
     endpoints: [
       { method: "POST", path: "/auth/login", label: "User Login" },
       { method: "GET", path: "/products", label: "List Products" },
@@ -70,20 +88,24 @@ export const portfolioData = {
     ]
   },
 
-  // Skills
+  // Skills (matching resume)
   skills: [
     "Python",
     "FastAPI",
     "REST APIs",
     "PostgreSQL",
     "SQLAlchemy",
-    "JWT Authentication",
+    "SQLite",
+    "OAuth2",
+    "JWT",
+    "Bcrypt",
+    "Async Programming",
     "Docker",
     "Git",
     "Postman",
-    "Pandas",
-    "NumPy",
-    "Scikit-learn"
+    "Linux",
+    "Pytest",
+    "AWS (Basics)"
   ],
 
   // Scrolling speed for the skills section (duration in seconds)
@@ -93,8 +115,9 @@ export const portfolioData = {
   defaultDarkMode: true,
 
   // Contact Section
-  contactSubtitle: "Open to Backend Developer roles in Hyderabad",
+  contactSubtitle: "Open to Backend Developer roles in Hyderabad | Open to Relocation",
   githubLink: "https://github.com/Maniprogramer",
+  portfolioLink: "https://portfolio-ochre-xi-44.vercel.app",
   linkedinLink: "https://www.linkedin.com/in/manikanta-yarramneedi-487b413b6/",
   emailLink: "mailto:manikanta.yarramneedi.home@gmail.com"
 };
