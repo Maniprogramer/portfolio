@@ -57,7 +57,7 @@ export const portfolioData = {
       description:
         "Built CRUD-based APIs with filtering and pagination (25% faster). Implemented JWT authentication, Docker deployment, and comprehensive validation and error handling. Designed scalable database schema using PostgreSQL with SQLAlchemy ORM.",
       techStack: ["FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "JWT"],
-      link: "https://e-commerce-api-three-henna.vercel.app/",
+      link: "https://ecommerce-api-manikanta.vercel.app/",
       image: "/ecommerce-api.png",
       whyItMatters:
         "Demonstrates ability to design scalable backend systems and handle real-world e-commerce workflows."
@@ -79,7 +79,7 @@ export const portfolioData = {
     title: "Try My API",
     description:
       "Explore the live backend API using Swagger UI. Test real endpoints for authentication, products, and orders — all running on production.",
-    link: "https://e-commerce-api-three-henna.vercel.app/docs",
+    link: "https://ecommerce-api-manikanta.vercel.app/docs",
     endpoints: [
       { method: "POST", path: "/auth/login", label: "User Login" },
       { method: "GET", path: "/products", label: "List Products" },
