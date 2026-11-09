@@ -5,31 +5,24 @@ export const portfolioData = {
   // Hero Section
   heroTitle: "Manikanta Yarramneedi",
   heroSubtitle:
-    "Backend Developer with hands-on experience building scalable REST APIs using Python, FastAPI, and PostgreSQL. Proven ability to design CRUD-based systems, optimize API performance by 25%, and implement secure authentication (JWT, OAuth2).",
+    "Python Backend Developer (Fresher) with hands-on project experience building REST APIs using Python, FastAPI, and PostgreSQL, including freelance project work. Practical exposure to designing CRUD-based systems, implementing secure authentication (JWT, OAuth2), async programming, database optimization, error handling, and containerizing applications with Docker. Also familiar with Flask and currently learning Django.",
 
   // Resume — place your resume PDF at /public/resume.pdf
   resumeLink: "/resume.pdf",
 
-  // Professional Summary (for About / Experience section)
-  experience: {
-    role: "Backend Developer",
-    company: "UST Global",
-    period: "Mar 2024 – Present",
-    location: "Hyderabad, India",
-    highlights: [
-      "Developed REST APIs using Python and FastAPI",
-      "Implemented CRUD operations and API design principles",
-      "Built async APIs improving performance",
-      "Implemented JWT and OAuth2 authentication",
-      "Optimized PostgreSQL queries and indexing",
-      "Handled error validation and exception handling"
-    ]
-  },
-
-  education: {
-    degree: "B.Sc. in Artificial Intelligence and Robotics",
-    year: "2023"
-  },
+  // Education (showing both MCA and B.Sc.)
+  education: [
+    {
+      degree: "Master of Computer Applications (MCA)",
+      institution: "KIET College, Korangi",
+      year: "2023 – 2025"
+    },
+    {
+      degree: "B.Sc. in Artificial Intelligence and Robotics",
+      institution: "Ideal College of Arts and Sciences, Kakinada",
+      year: "2023"
+    }
+  ],
 
   // Impact Section (3 items)
   impactItems: [
@@ -53,9 +46,19 @@ export const portfolioData = {
   // Selected Work / Projects
   projects: [
     {
+      title: "Freelance Backend Projects — AhamVerse Technologies",
+      description:
+        "Developed REST APIs using Python and FastAPI as part of freelance project work. Implemented CRUD operations following API design principles. Built async APIs to improve performance and efficiency. Implemented secure JWT and OAuth2 authentication. Optimized PostgreSQL queries and database indexing to reduce latency. Handled request validation and exception handling workflows.",
+      techStack: ["Python", "FastAPI", "PostgreSQL", "JWT", "OAuth2", "Async Programming"],
+      link: "https://github.com/Maniprogramer",
+      image: null,
+      whyItMatters:
+        "Real-world freelance experience building backend systems with professional API design and optimization."
+    },
+    {
       title: "Scalable E-commerce API",
       description:
-        "Built CRUD-based APIs with filtering and pagination (25% faster). Implemented JWT authentication, Docker deployment, and comprehensive validation and error handling. Designed scalable database schema using PostgreSQL with SQLAlchemy ORM.",
+        "Built CRUD-based APIs with filtering and pagination, achieving 25% faster data retrieval. Implemented standard authentication workflows and containerized deployment using Docker. Added rigorous request validation and structured global error handling.",
       techStack: ["FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "JWT"],
       link: "https://ecommerce-api-manikanta.vercel.app/",
       image: "/ecommerce-api.png",
@@ -65,7 +68,7 @@ export const portfolioData = {
     {
       title: "Secure Auth API",
       description:
-        "Built a secure authentication system using OAuth2 and JWT. Implemented password hashing with bcrypt, user signup/login flows, protected routes, and token refresh mechanisms.",
+        "Built a secure authorization system implementing standard OAuth2 and JWT protocols. Implemented secure password hashing (Bcrypt) and validation.",
       techStack: ["FastAPI", "OAuth2", "JWT", "Bcrypt", "PostgreSQL"],
       link: "https://github.com/Maniprogramer/auth-api",
       image: "/authapi.png",
@@ -91,7 +94,10 @@ export const portfolioData = {
   // Skills (matching resume)
   skills: [
     "Python",
+    "SQL",
     "FastAPI",
+    "Flask",
+    "Django",
     "REST APIs",
     "PostgreSQL",
     "SQLAlchemy",
@@ -105,7 +111,15 @@ export const portfolioData = {
     "Postman",
     "Linux",
     "Pytest",
-    "AWS (Basics)"
+    "AWS (Basics)",
+    "NumPy",
+    "Pandas",
+    "Scikit-learn",
+    "Matplotlib",
+    "Seaborn",
+    "TensorFlow",
+    "PyTorch",
+    "Machine Learning"
   ],
 
   // Scrolling speed for the skills section (duration in seconds)
@@ -115,7 +129,7 @@ export const portfolioData = {
   defaultDarkMode: true,
 
   // Contact Section
-  contactSubtitle: "Open to Backend Developer roles in Hyderabad | Open to Relocation",
+  contactSubtitle: "Open to Python backend roles across India | Open to relocation | On-site or remote",
   githubLink: "https://github.com/Maniprogramer",
   portfolioLink: "https://portfolio-ochre-xi-44.vercel.app",
   linkedinLink: "https://www.linkedin.com/in/manikanta-yarramneedi-487b413b6/",
