@@ -75,8 +75,8 @@ export default function Portfolio() {
         ))}
       </section>
 
-      {/* EXPERIENCE SECTION */}
-      {portfolioData.experience && (
+      {/* EDUCATION SECTION */}
+      {portfolioData.education && (
         <section id="experience" className="py-32 px-6">
           <div className="max-w-4xl mx-auto">
             <motion.h2
@@ -84,7 +84,7 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 30 }}
               className="text-5xl font-semibold mb-16"
             >
-              Experience
+              Education
             </motion.h2>
 
             <motion.div
@@ -93,51 +93,22 @@ export default function Portfolio() {
               className={`rounded-2xl border p-8 relative overflow-hidden ${dark ? "bg-gray-900/40 border-gray-800" : "bg-gray-50 border-gray-200"}`}
             >
               {/* Accent bar */}
-              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-l-2xl" />
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-blue-500 rounded-l-2xl" />
 
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
-                <div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <Briefcase size={20} className="text-blue-400" />
-                    <h3 className="text-2xl font-semibold">{portfolioData.experience.role}</h3>
-                  </div>
-                  <p className={`text-lg ${dark ? "text-gray-300" : "text-gray-700"}`}>
-                    {portfolioData.experience.company}
-                  </p>
-                </div>
-                <div className="text-right shrink-0">
-                  <p className="text-sm text-blue-400 font-medium">{portfolioData.experience.period}</p>
-                  <p className="text-xs text-gray-500 mt-1">{portfolioData.experience.location}</p>
-                </div>
-              </div>
-
-              <div className="space-y-3 mt-6">
-                {portfolioData.experience.highlights.map((h, i) => (
-                  <motion.div
-                    key={i}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    initial={{ opacity: 0, x: -15 }}
-                    transition={{ delay: i * 0.08 }}
-                    className="flex items-start gap-3"
-                  >
-                    <ChevronRight size={16} className="text-blue-400 mt-0.5 shrink-0" />
-                    <p className={`text-sm ${dark ? "text-gray-400" : "text-gray-600"}`}>{h}</p>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Education */}
-              {portfolioData.education && (
-                <div className={`mt-8 pt-6 border-t ${dark ? "border-gray-800" : "border-gray-200"}`}>
-                  <div className="flex items-center gap-3">
-                    <GraduationCap size={20} className="text-purple-400" />
-                    <div>
-                      <p className="font-semibold">{portfolioData.education.degree}</p>
-                      <p className="text-sm text-gray-500">{portfolioData.education.year}</p>
+              <div className="space-y-6">
+                {portfolioData.education.map((edu, index) => (
+                  <div key={index} className={index > 0 ? `pt-6 border-t ${dark ? "border-gray-800" : "border-gray-200"}` : ""}>
+                    <div className="flex items-start gap-3">
+                      <GraduationCap size={20} className="text-purple-400 mt-1 shrink-0" />
+                      <div>
+                        <p className="font-semibold text-lg">{edu.degree}</p>
+                        <p className={`text-sm mt-1 ${dark ? "text-gray-400" : "text-gray-600"}`}>{edu.institution}</p>
+                        <p className="text-sm text-purple-400 font-medium mt-1">{edu.year}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
